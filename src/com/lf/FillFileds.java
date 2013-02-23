@@ -12,13 +12,15 @@ public class FillFileds {
 	    PdfReader reader;
 	    PdfStamper stamper;
 	    AcroFields form;
-	    reader = new PdfReader("Userdetails.pdf");
+	    reader = new PdfReader("User-details.pdf");
 	    stamper = new PdfStamper(reader, new FileOutputStream(
 	        "Userdetails-Modified.pdf"));
 	    form = stamper.getAcroFields();
 	    form.setField("Name", "LevelFive");
-	    form.setField("Name", "LevelFive");
-
+	    form.setField("EMail", "lf@lfsolutions.net");
+	    form.setField("Designation", "CEO");
+	    form.setField("Address", "18 Primrose Road");
+	    System.out.println("Its completed perfectly.");
 	    stamper.setFormFlattening(true);
 	    stamper.close();
 	}
